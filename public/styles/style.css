@@ -1,0 +1,19 @@
+section {
+    display: inline-grid;
+}
+
+section img {
+    width: 200px;
+    height: 200px;
+
+    border: solid;
+}
+
+h1 {
+    max-width: 200px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
