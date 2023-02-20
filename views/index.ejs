@@ -3,28 +3,27 @@
   <body>
     <% squad.members.forEach(member=> { %>
 
-      <a href="<%= member.website %>" target="_blank">
-        <section>
-          <% if (member.avatar) { %>
-            <img src="<%= member.avatar %>" onerror="this.src='assets/sad.jpg'"
-              alt="De avatar van <%= member.name %>" />
-            <% } else { %>
-              <img src="assets\sad.jpg" alt="Placeholder image van <%= member.name %> " />
-              <% } %>
+      <section style="background-color:<%= member.colour?.hex %>">
+        <% if (member.avatar) { %>
+          <img src="<%= member.avatar %>" onerror="this.src='assets/sad.jpg'" alt="De avatar van <%= member.name %>" />
+          <% } else { %>
+            <img src="assets\sad.jpg" alt="Placeholder image van <%= member.name %> " />
+            <% } %>
 
-                <h1>
-                  <%= member.name %>
-                    <%= member.prefix %>
-                      <%= member.surname %>
-                </h1>
-
-                <!-- <h2>
-                  <%= member.gitHubHandle %>
-                </h2> -->
-        </section>
-      </a>
+              <h1>
+                <%= member.name %>
+                  <%= member.prefix %>
+                    <%= member.surname %> - <%= member.gitHubHandle %>
+              </h1>
+      </section>
 
       <% }) %>
+
+        <!-- ? vervangt de if statement die checkt of colour ingevuld is -->
+
+        <!-- if(member.colour) {
+                  member.colour.hex
+                } -->
   </body>
 
   <%- include('./partials/foot') %>
