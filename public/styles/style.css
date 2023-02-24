@@ -1,13 +1,122 @@
-section img {
-    width: 100px;
-    height: 100px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-noise: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iLjA1IiBkPSJNMCAwaDMwMHYzMDBIMHoiLz48L3N2Zz4=);
+}
+
+body {
+    font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif), sans-serif;
+
+    background: linear-gradient(#01ECCB, black 30%);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    margin-bottom: 100px;
+
+    background: linear-gradient(transparent 0, rgba(0, 0, 0, .5) 100%), var(--background-noise);
+    background-color: #01ECCB;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+header img {
+    width: 200px;
+    height: 200px;
+
+    /* box-shadow: 15px 15px 40px grey; */
+
+    box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
+
+    margin-right: 0px;
+
 }
 
 section {
-    border: solid;
-    font-size: 0.5em;
+    margin: 20px;
+    margin-top: 60px;
+    margin-right: 40px;
+}
+
+th {
+    text-transform: uppercase;
+    align-items: start;
+
+    border-bottom: 1px solid grey;
+
+    color: hsla(0, 0%, 100%, .7);
+}
+
+img {
+    width: 50px;
+    height: 50px;
+
+    margin-right: 20px;
+}
+
+td {
+    padding: 0.75em 3.5em;
+    color: #fff;
 }
 
 h1 {
-    color: grey;
+    font-size: 6em;
+    margin: 0.08em 0px 0.12em;
+
+    color: #fff;
+}
+
+.caps {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    margin: 0;
+
+    font-weight: 700;
+
+    color: #fff;
+}
+
+p {
+    font-size: 0.875em;
+    margin: 0;
+    margin-bottom: 5px;
+
+    color: hsla(0, 0%, 100%, .7);
+}
+
+h2 {
+    font-size: 0.875em;
+    margin: 0;
+    margin-bottom: 5px;
+
+    color: hsla(0, 0%, 100%, .7);
+}
+
+em {
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.grey {
+    color: hsla(0, 0%, 100%, .7);
+}
+
+::-webkit-scrollbar {
+    width: 0em;
 }

@@ -1,29 +1,63 @@
 <%- include('./partials/head') %>
 
   <body>
-    <% squad.members.forEach(member=> { %>
-
-      <section style="background-color:<%= member.colour?.hex %>">
-        <% if (member.avatar) { %>
-          <img src="<%= member.avatar %>" onerror="this.src='assets/sad.jpg'" alt="De avatar van <%= member.name %>" />
-          <% } else { %>
-            <img src="assets\sad.jpg" alt="Placeholder image van <%= member.name %> " />
-            <% } %>
-
-              <h1>
-                <%= member.name %>
-                  <%= member.prefix %>
-                    <%= member.surname %> - <%= member.gitHubHandle %> - <%- member.bio.html %>
-              </h1>
+    <header>
+      <section>
+        <img src="assets/fdnd.jpeg" alt="fdnd playlist icon">
       </section>
 
-      <% }) %>
+      <section>
+        <p class="caps">Openbare playlist</p>
+        <h1>Squad page</h1>
+        <p>Al je favoriete members in een playlist</p>
+        <h2>Gemaakt voor <em>Squad A · 24 nummers,</em> 1 uur 12 min.</h2>
+      </section>
+    </header>
 
-        <!-- ? vervangt de if statement die checkt of colour ingevuld is -->
+    <main>
+      <table>
+        <tr>
+          <th>Art</th>
+          <th>Titel</th>
+          <th>Album</th>
+        </tr>
 
-        <!-- if(member.colour) {
-                  member.colour.hex
-                } -->
+        <% squad.members.forEach(member=> { %>
+          <tr>
+            <td>
+              <% if (member.avatar) { %>
+                <a href="<%= member.website %>">
+                  <img src="<%= member.avatar %>" onerror="this.src='assets/sad.jpg'"
+                    alt="De avatar van <%= member.name %>" />
+                  <% } else { %>
+                    <img src="assets\sad.jpg" alt="Placeholder image van <%= member.name %> " />
+                    <% } %>
+                </a>
+            </td>
+
+            <td>
+              <a href="<%= member.website %>">
+                <%= member.name %>
+                  <%= member.prefix %>
+                    <%= member.surname %>
+              </a>
+              <br>
+              <a class="grey" href="<%= member.website %>">
+                🅴 <%= member.nickname %>
+              </a>
+
+            </td>
+
+            <td>
+              <a class="grey" href="<%= member.website %>">
+                <%= member.gitHubHandle %>
+              </a>
+            </td>
+          </tr>
+          <% }) %>
+      </table>
+
+    </main>
   </body>
 
   <%- include('./partials/foot') %>
